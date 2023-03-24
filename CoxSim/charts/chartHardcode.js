@@ -11,5 +11,5 @@ new Chart("myChart", {
       data: yValues
     }]
   },
-  options: {...}
+  options: {...} 
 });
