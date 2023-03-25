@@ -40,7 +40,7 @@ var chartData7575minreq = {
 
 var barGraph7575minreq = new Chart("7575minreq", {
   type: 'bar',
-  data: chartData,
+  data: chartData7575minreq,
   options: {
     scales: {
       y: {
@@ -74,7 +74,7 @@ var chart9999minreq = {
 
 var barGraph9999minreq = new Chart("9999minreq", {
   type: 'bar',
-  data: chartData,
+  data: chart9999minreq,
   options: {
     scales: {
       y: {
