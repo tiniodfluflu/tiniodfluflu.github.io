@@ -4,6 +4,7 @@ export class BattleLog {
 
     constructor(enabled:Boolean) {
         this.enabled = enabled;
+        this.battleEvents = [];
     }
 
     logEvent(event: string):void {

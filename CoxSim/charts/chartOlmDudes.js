@@ -1,6 +1,12 @@
 var xValues = ["DWH BRing", "DWH LB", "BGS BRing", "BGS LB"];
-var yValues = [55, 49 ];
-var barColors = ["red", "green"];
+
+
+var yValues = [
+  olmHitter.DoTrioOlm_4dwh_minreq_tent,
+  olmHitter.DoTrioOlm_4dwh_minreq_tent,
+  olmHitter.DoTrioOlm_4dwh_minreq_tent,
+  olmHitter.DoTrioOlm_4dwh_minreq_tent,
+];
 
 var chartData = {
   labels: xValues,

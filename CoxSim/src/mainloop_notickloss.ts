@@ -4,13 +4,14 @@ import { CreateTrioOlmMeleeHand } from "./beastiary";
 import * as Bonuses from "./commonPlayerBonuses";
 import { DoDwhSpec, DoBgsSpec } from "./specs";
 import { GamerStrategy } from "./types";
+import * as Gamers from "./gamers"
 
-let battleLog: BattleLog = new BattleLog(true);
 let stratLog: Array<number> = [];
 
 const MAX_TICKCOUNT:number = 1000;
 
 export function GetTrioOlmTicks(maxIter: number): Array<number> {
+    let battleLog: BattleLog = new BattleLog(true);
     for (let iter = 0; iter < maxIter; iter++) {
         let tickCounter = 0;
 
@@ -33,7 +34,7 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
         let gamer3specstothrow = 1;
 
 
-        while (theOlm.hp >= 0 && tickCounter < this.MAX_TICKCOUNT) {
+        while (theOlm.hp >= 0 && tickCounter < MAX_TICKCOUNT) {
             // process gamer 1
             if (gamer1cd <= 0) {
                 if (gamer1specstothrow > 0) {
@@ -88,7 +89,8 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
  * @param gamer3 gamer 3 by pid
  * @returns array of ticks taken for each fight, of length maxIter
  */
-export function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
+function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
+    let battleLog: BattleLog = new BattleLog(true);
     for (let iter = 0; iter < maxIter; iter++) {
         let tickCounter = 0;
 
@@ -102,9 +104,9 @@ export function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, 
 
         let theOlm = CreateTrioOlmMeleeHand();
 
-        while (theOlm.hp >= 0 && tickCounter < this.MAX_TICKCOUNT) {
+        while (theOlm.hp >= 0 && tickCounter < MAX_TICKCOUNT) {
             // process gamer 1
-            if (gamer1NextAttackTick >= tickCounter) {
+            if (gamer1NextAttackTick <= tickCounter) {
                 if (gamer1SpecsRemaining > 0) {
                     gamer1SpecsRemaining -= 1;
                     gamer1.specialAttack(battleLog, gamer1.specialAttackBonuses, theOlm, tickCounter);
@@ -116,7 +118,7 @@ export function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, 
             }
 
             // process gamer 2
-            if (gamer2NextAttackTick >= tickCounter) {
+            if (gamer2NextAttackTick <= tickCounter) {
                 if (gamer2SpecsRemaining > 0) {
                     gamer2SpecsRemaining -= 1;
                     gamer2.specialAttack(battleLog, gamer2.specialAttackBonuses, theOlm, tickCounter);
@@ -128,7 +130,7 @@ export function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, 
             }
 
             // process gamer 3
-            if (gamer3NextAttackTick >= tickCounter) {
+            if (gamer3NextAttackTick <= tickCounter) {
                 if (gamer3SpecsRemaining > 0) {
                     gamer3SpecsRemaining -= 1;
                     gamer3.specialAttack(battleLog, gamer3.specialAttackBonuses, theOlm, tickCounter);
@@ -145,4 +147,8 @@ export function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, 
         stratLog.push(tickCounter);
     }
     return stratLog;
+}
+
+export function DoTrioOlm_4dwh_minreq_tent(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_2spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent);
 }
