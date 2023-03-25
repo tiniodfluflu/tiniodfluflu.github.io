@@ -10,7 +10,7 @@ let stratLog: Array<number> = [];
 
 const MAX_TICKCOUNT:number = 1000;
 
-export function TrioOlmTicks(maxIter: number): Array<number> {
+export function GetTrioOlmTicks(maxIter: number): Array<number> {
     for (let iter = 0; iter < maxIter; iter++) {
         let tickCounter = 0;
 
