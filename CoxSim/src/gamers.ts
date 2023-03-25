@@ -182,13 +182,13 @@ export const gamer_1spec_48scy_maxstats_bgs_scy:GamerStrategy = {
 export const gamer_48scy_maxstats_dwh_scy_lb:GamerStrategy = {
     numberOfSpecsAvailable: 2,
     specialAttack: DoDwhSpec,
-    specialAttackBonuses: Bonuses.maxlevel_48scy_bgs_lb,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_dwh_lb,
     autoAttack: DoScytheAuto,
     autoAttackBonuses: Bonuses.maxlevel_48scy_scy_lb
 }
 
 export const gamer_48scy_maxstats_bgs_scy_lb:GamerStrategy = {
-    numberOfSpecsAvailable: 1,
+    numberOfSpecsAvailable: 2,
     specialAttack: DoBgsSpec,
     specialAttackBonuses: Bonuses.maxlevel_48scy_bgs_lb,
     autoAttack: DoScytheAuto,

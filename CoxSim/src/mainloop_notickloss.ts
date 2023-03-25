@@ -148,8 +148,8 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
         }
 
         if(battleLog.enabled) {
-            console.log("strat");
-            console.log(battleLog);
+            console.log("iter " + iter);
+            console.log(JSON.parse(JSON.stringify(battleLog)));
         }
         stratLog.push(tickCounter)
     }

@@ -1,5 +1,5 @@
 var xValues = ["DWH BRing", "DWH LB", "BGS BRing", "BGS LB"];
-var maxIter = 1;
+var maxIter = 2;
 /*
 var yValues7575minreq = [
   olmHitter.averageTicks(olmHitter.DoTrioOlm_4dwh_minreq_tent(maxIter)),
@@ -24,11 +24,11 @@ var yValues8585medgearlance = [
 
 var yValues999948scy = [
   olmHitter.averageTicks(olmHitter.DoTrioOlm_4dwh_48scy_maxstats_scy(maxIter)),
-  olmHitter.averageTicks(olmHitter.DoTrioOlm_4bgs_48scy_maxstats_scy(maxIter)),
   olmHitter.averageTicks(olmHitter.DoTrioOlm_6dwh_48scy_maxstats_scy(maxIter)),
+  olmHitter.averageTicks(olmHitter.DoTrioOlm_4bgs_48scy_maxstats_scy(maxIter)),
   olmHitter.averageTicks(olmHitter.DoTrioOlm_6bgs_48scy_maxstats_scy(maxIter)),
 ];
-
+/*
 var chartData7575minreq = {
   labels: xValues,
   datasets: [{
@@ -130,6 +130,7 @@ var barGraph8585medgearlance = new Chart("8585medgearlance", {
     }
   },
 });
+*/
 
 var chart999948scy = {
   labels: xValues,

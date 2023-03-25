@@ -4,8 +4,8 @@ import { rollForDamage as RollForDamage } from "./rolls";
 import { Monster, PlayerBonuses } from "./types";
 
 export function DoAutoAttack(battleLog:BattleLog, attacker:PlayerBonuses, defender:Monster, tick:number):void {
-    let attackRoll = Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle));
-    let defenceRoll = Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle));
+    let attackRoll = Math.floor(Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle)));
+    let defenceRoll = Math.floor(Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle)));
     let damageRoll = RollForDamage(CalculateMaxHit(attacker.effectiveStrengthLevel, attacker.totalStrengthBonus));
 
     if (attackRoll > defenceRoll && damageRoll > 1) {
@@ -20,8 +20,8 @@ export function DoAutoAttack(battleLog:BattleLog, attacker:PlayerBonuses, defend
 }
 
 export function DoLanceAutoOnDragon(battleLog:BattleLog, attacker:PlayerBonuses, defender:Monster, tick:number) {
-    let attackRoll = 1.2 * Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle));
-    let defenceRoll = Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle));
+    let attackRoll = Math.floor(1.2 * Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle)));
+    let defenceRoll = Math.floor(Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle)));
     let damageRoll = RollForDamage(CalculateLanceMaxHitOnDragon(attacker.effectiveStrengthLevel, attacker.totalStrengthBonus));
 
     if (attackRoll > defenceRoll && damageRoll > 1) {
@@ -39,8 +39,8 @@ export function DoScytheAuto(battleLog:BattleLog, attacker:PlayerBonuses, defend
     let scyMult = 1;
     for(let i=0; i<3; i++)
     {
-        let attackRoll = Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle));
-        let defenceRoll = Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle));
+        let attackRoll = Math.floor(Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle)));
+        let defenceRoll =Math.floor( Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle)));
         let damageRoll = RollForDamage(CalculateMaxHit(attacker.effectiveStrengthLevel, attacker.totalStrengthBonus));
         damageRoll = Math.floor(damageRoll * scyMult);
 
