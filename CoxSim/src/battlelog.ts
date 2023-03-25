@@ -1,6 +1,7 @@
 export class BattleLog {
     enabled:Boolean;
     battleEvents:string[];
+    olmDef:number;
 
     constructor(enabled:Boolean) {
         this.enabled = enabled;
@@ -21,5 +22,17 @@ export class BattleLog {
 
     dumpLog():void {
         console.log(this.battleEvents);
+    }
+
+    setOlmDef(input:number):void {
+        this.olmDef = input;
+    }
+    
+    clearOlmDef():void {
+        this.olmDef = 178;
+    }
+
+    getOlmDef():number {
+        return this.olmDef;
     }
 }

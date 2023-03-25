@@ -92,9 +92,11 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
  */
 function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
     let stratLog:Array<number> = [];
+    let defLog:Array<number> = [];
     let battleLog: BattleLog = new BattleLog(true);
     let tickCounter:number;
     for (let iter = 0; iter < maxIter; iter++) {
+        battleLog.clearOlmDef();
         battleLog.clearLog();
         tickCounter = 0;
         let gamer1NextAttackTick:number = 0;
@@ -147,12 +149,18 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
             tickCounter += 1;
         }
 
+        /*
         if(battleLog.enabled) {
             console.log("iter " + iter);
             console.log(JSON.parse(JSON.stringify(battleLog)));
-        }
+        }*/
+        defLog.push(battleLog.getOlmDef());
         stratLog.push(tickCounter)
     }
+    if (battleLog.enabled) {
+        console.log(defLog);
+    }
+
     return stratLog;
 }
 

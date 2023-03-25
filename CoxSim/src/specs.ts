@@ -18,6 +18,7 @@ export function DoDwhSpec(battleLog: BattleLog, attacker: PlayerBonuses, target:
         battleLog.logEvent(
             `${attacker.name} missed dwh spec , ${target.name} def remaining: ${target.defenceLevel}, tick:${tick}, attackRoll:${specRoll}, defRoll:${defRoll}`);
     }
+    battleLog.setOlmDef(target.defenceLevel);
 }
 
 export function DoBgsSpec(battleLog: BattleLog, attacker: PlayerBonuses, target: Monster, tick: number): void {
@@ -36,5 +37,6 @@ export function DoBgsSpec(battleLog: BattleLog, attacker: PlayerBonuses, target:
             `${attacker.name} missed bgs spec , ${target.name} def remaining: ${target.defenceLevel}, tick:${tick}, attackRoll:${specRoll}, defRoll:${defRoll}`);
 
     }
+    battleLog.setOlmDef(target.defenceLevel);
 }
 

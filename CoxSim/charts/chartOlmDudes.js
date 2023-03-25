@@ -1,5 +1,5 @@
 var xValues = ["DWH BRing", "DWH LB", "BGS BRing", "BGS LB"];
-var maxIter = 100;
+var maxIter = 1000;
 
 var yValues7575minreq = [
   olmHitter.averageTicks(olmHitter.DoTrioOlm_4dwh_minreq_tent(maxIter)),
