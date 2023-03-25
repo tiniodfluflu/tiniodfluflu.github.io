@@ -46,9 +46,9 @@ export const gamer_minreq_dwh_lb_tent:GamerStrategy = {
 export const gamer_minreq_bgs_lb_tent:GamerStrategy = {
     numberOfSpecsAvailable: 2,
     specialAttack: DoBgsSpec,
-    specialAttackBonuses: Bonuses.minreq_bgs,
+    specialAttackBonuses: Bonuses.minreq_lb_bgs,
     autoAttack: DoAutoAttack,
-    autoAttackBonuses: Bonuses.minreq_tent
+    autoAttackBonuses: Bonuses.minreq_lb_tent
 }
 
 export const gamer_2spec_minreq_maxstats_dwh_tent:GamerStrategy = {
@@ -94,7 +94,7 @@ export const gamer_minreq_maxstats_dwh_lb_tent:GamerStrategy = {
 export const gamer_minreq_maxstats_bgs_lb_tent:GamerStrategy = {
     numberOfSpecsAvailable: 2,
     specialAttack: DoBgsSpec,
-    specialAttackBonuses: Bonuses.minreq_maxstats_bgs,
+    specialAttackBonuses: Bonuses.minreq_maxstats_lb_bgs,
     autoAttack: DoAutoAttack,
-    autoAttackBonuses: Bonuses.minreq_maxstats_tent
+    autoAttackBonuses: Bonuses.minreq_maxstats_lb_tent
 }

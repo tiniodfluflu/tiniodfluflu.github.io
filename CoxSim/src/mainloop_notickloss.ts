@@ -155,22 +155,57 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
     return stratLog;
 }
 
+/// min req 75/75
 export function DoTrioOlm_4dwh_minreq_tent(maxIter:number):Array<number> {
-    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_2spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent);
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_minreq_dwh_tent, 
+        Gamers.gamer_1spec_minreq_dwh_tent, 
+        Gamers.gamer_1spec_minreq_dwh_tent);
 }
-
 export function DoTrioOlm_6dwh_minreq_tent_lb(maxIter:number):Array<number> {
-    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_minreq_dwh_lb_tent, Gamers.gamer_minreq_dwh_lb_tent, Gamers.gamer_minreq_dwh_lb_tent);
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_minreq_dwh_lb_tent, 
+        Gamers.gamer_minreq_dwh_lb_tent, 
+        Gamers.gamer_minreq_dwh_lb_tent);
 }
-
 export function DoTrioOlm_4bgs_minreq_tent(maxIter:number):Array<number> {
-    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_2spec_minreq_bgs_tent, Gamers.gamer_1spec_minreq_bgs_tent, Gamers.gamer_1spec_minreq_bgs_tent);
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_minreq_bgs_tent, 
+        Gamers.gamer_1spec_minreq_bgs_tent, 
+        Gamers.gamer_1spec_minreq_bgs_tent);
 }
-
 export function DoTrioOlm_6bgs_minreq_tent_lb(maxIter:number):Array<number> {
-    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_minreq_bgs_lb_tent, Gamers.gamer_minreq_bgs_lb_tent, Gamers.gamer_minreq_bgs_lb_tent);
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_minreq_bgs_lb_tent, 
+        Gamers.gamer_minreq_bgs_lb_tent, 
+        Gamers.gamer_minreq_bgs_lb_tent);
 }
 
+/// max stats min req
+export function DoTrioOlm_4dwh_minreq_max_stats_tent(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_minreq_maxstats_dwh_tent, 
+        Gamers.gamer_1spec_minreq_maxstats_dwh_tent, 
+        Gamers.gamer_1spec_minreq_maxstats_dwh_tent);
+}
+export function DoTrioOlm_6dwh_minreq_max_stats_tent_lb(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_minreq_maxstats_dwh_lb_tent, 
+        Gamers.gamer_minreq_maxstats_dwh_lb_tent, 
+        Gamers.gamer_minreq_maxstats_dwh_lb_tent);
+}
+export function DoTrioOlm_4bgs_minreq_max_stats_tent(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_minreq_maxstats_bgs_tent, 
+        Gamers.gamer_1spec_minreq_maxstats_bgs_tent, 
+        Gamers.gamer_1spec_minreq_maxstats_bgs_tent);
+}
+export function DoTrioOlm_6bgs_minreq_max_stats_tent_lb(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_minreq_maxstats_bgs_lb_tent, 
+        Gamers.gamer_minreq_maxstats_bgs_lb_tent, 
+        Gamers.gamer_minreq_maxstats_bgs_lb_tent);
+}
 
 // TODO: refactor the chart utils out
 export function histogram(battleSets:Array<number>):object {
