@@ -235,6 +235,84 @@ export const midlevel_med_gear_bgs_lb:PlayerBonuses = {
     attackCooldown: 6,
 };
 
+export const maxlevel_48scy_scy: PlayerBonuses = {
+    name: "99/99 48scy scy",
+    effectiveAttackLevel: 144,
+    effectiveStrengthLevel: 149,
+    totalStabBonus: 0,
+    totalSlashBonus: 147,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 132,
+    attackStyle:AttackStyle.SLASH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 5,
+}
+
+export const maxlevel_48scy_dwh: PlayerBonuses = {
+    name: "99/99 48scy dwh",
+    effectiveAttackLevel: 147,
+    effectiveStrengthLevel: 147,
+    totalStabBonus: 0,
+    totalSlashBonus: 0,
+    totalCrushBonus: 160,
+    totalStrengthBonus: 150,
+    attackStyle:AttackStyle.CRUSH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+}
+
+export const maxlevel_48scy_bgs: PlayerBonuses = {
+    name: "99/99 48scy scy",
+    effectiveAttackLevel: 144,
+    effectiveStrengthLevel: 149,
+    totalStabBonus: 0,
+    totalSlashBonus: 169,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 189,
+    attackStyle:AttackStyle.SLASH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+}
+
+export const maxlevel_48scy_scy_lb: PlayerBonuses = {
+    name: "99/99 48scy scy lb",
+    effectiveAttackLevel: 144,
+    effectiveStrengthLevel: 149,
+    totalStabBonus: 0,
+    totalSlashBonus: 147,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 126,
+    attackStyle:AttackStyle.SLASH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 5,
+}
+
+export const maxlevel_48scy_dwh_lb: PlayerBonuses = {
+    name: "99/99 48scy dwh lb",
+    effectiveAttackLevel: 147,
+    effectiveStrengthLevel: 147,
+    totalStabBonus: 0,
+    totalSlashBonus: 0,
+    totalCrushBonus: 160,
+    totalStrengthBonus: 142,
+    attackStyle:AttackStyle.CRUSH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+}
+
+export const maxlevel_48scy_bgs_lb: PlayerBonuses = {
+    name: "99/99 48scy scy lb",
+    effectiveAttackLevel: 144,
+    effectiveStrengthLevel: 149,
+    totalStabBonus: 0,
+    totalSlashBonus: 169,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 181,
+    attackStyle:AttackStyle.SLASH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+}
+
 function GetPlayerAttackBonus(style:AttackStyle):AttackStyle {
     
     if(style === AttackStyle.STAB) {

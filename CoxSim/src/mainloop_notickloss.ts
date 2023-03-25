@@ -210,7 +210,7 @@ export function DoTrioOlm_6bgs_minreq_max_stats_tent_lb(maxIter:number):Array<nu
 
 export function DoTrioOlm_4dwh_medgear_medstats_lance(maxIter:number):Array<number> {
     return DoTrioOlmWithSpecStrategy(maxIter, 
-        Gamers.gamer_2specs_medreq_medstats_dwh_lance, 
+        Gamers.gamer_2spec_medreq_medstats_dwh_lance, 
         Gamers.gamer_1spec_medreq_medstats_dwh_lance, 
         Gamers.gamer_1spec_medreq_medstats_dwh_lance);
 }
@@ -224,7 +224,7 @@ export function DoTrioOlm_6dwh_medgear_medstats_lance(maxIter:number):Array<numb
 
 export function DoTrioOlm_4bgs_medgear_medstats_lance(maxIter:number):Array<number> {
     return DoTrioOlmWithSpecStrategy(maxIter, 
-        Gamers.gamer_2specs_medreq_medstats_bgs_lance, 
+        Gamers.gamer_2spec_medreq_medstats_bgs_lance, 
         Gamers.gamer_1spec_medreq_medstats_bgs_lance, 
         Gamers.gamer_1spec_medreq_medstats_bgs_lance);
 }
@@ -236,6 +236,35 @@ export function DoTrioOlm_6bgs_medgear_medstats_lance(maxIter:number):Array<numb
         Gamers.gamer_medreq_medstats_bgs_lance_lb);
 }
 
+export function DoTrioOlm_4dwh_48scy_maxstats_scy(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_48scy_maxstats_dwh_scy, 
+        Gamers.gamer_1spec_48scy_maxstats_dwh_scy, 
+        Gamers.gamer_1spec_48scy_maxstats_dwh_scy);
+}
+
+export function DoTrioOlm_4bgs_48scy_maxstats_scy(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2spec_48scy_maxstats_bgs_scy, 
+        Gamers.gamer_1spec_48scy_maxstats_bgs_scy, 
+        Gamers.gamer_1spec_48scy_maxstats_bgs_scy);
+}
+
+export function DoTrioOlm_6dwh_48scy_maxstats_scy(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_48scy_maxstats_dwh_scy_lb, 
+        Gamers.gamer_48scy_maxstats_dwh_scy_lb, 
+        Gamers.gamer_48scy_maxstats_dwh_scy_lb);
+}
+
+export function DoTrioOlm_6bgs_48scy_maxstats_scy(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_48scy_maxstats_bgs_scy_lb, 
+        Gamers.gamer_48scy_maxstats_bgs_scy_lb, 
+        Gamers.gamer_48scy_maxstats_bgs_scy_lb);
+}
+
+
 // TODO: refactor the chart utils out
 export function histogram(battleSets:Array<number>):object {
     return ChartUtil.histogram(battleSets);
@@ -244,3 +273,4 @@ export function histogram(battleSets:Array<number>):object {
 export function averageTicks(battleSets:Array<number>):number {
     return ChartUtil.averageTicks(battleSets);
 }
+

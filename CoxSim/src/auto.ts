@@ -34,3 +34,25 @@ export function DoLanceAutoOnDragon(battleLog:BattleLog, attacker:PlayerBonuses,
             `${attacker.name} missed auto, ${defender.name} hp remaining: ${defender.hp}, tick:${tick}, attackRoll:${attackRoll}, defRoll:${defenceRoll}`);
     }
 }
+
+export function DoScytheAuto(battleLog:BattleLog, attacker:PlayerBonuses, defender:Monster, tick:number) {
+    let scyMult = 1;
+    for(let i=0; i<3; i++)
+    {
+        let attackRoll = Math.random() * CalculatePlayerAttackRoll(attacker.effectiveAttackLevel, attacker.GetPlayerAttackBonus(attacker.attackStyle));
+        let defenceRoll = Math.random() * CalculateNpcDefRoll(defender.defenceLevel, defender.GetDefenderStyleBonus(attacker.attackStyle));
+        let damageRoll = RollForDamage(CalculateMaxHit(attacker.effectiveStrengthLevel, attacker.totalStrengthBonus));
+        damageRoll = Math.floor(damageRoll * scyMult);
+
+        if (attackRoll > defenceRoll && damageRoll > 1) {
+            defender.hp = defender.hp - damageRoll;
+            battleLog.logEvent(
+                `${attacker.name} hit scy auto ${i+1} of 3 for ${damageRoll}, ${defender.name} hp remaining: ${defender.hp}, tick:${tick}, attackRoll:${attackRoll}, defRoll:${defenceRoll}`);
+        }
+        else {
+            battleLog.logEvent(
+                `${attacker.name} missed scy auto ${i+1} of 3, ${defender.name} hp remaining: ${defender.hp}, tick:${tick}, attackRoll:${attackRoll}, defRoll:${defenceRoll}`);
+        }
+        scyMult = scyMult / 2;
+    }
+}

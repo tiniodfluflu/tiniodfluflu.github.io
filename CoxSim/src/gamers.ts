@@ -1,7 +1,7 @@
 import { DoBgsSpec, DoDwhSpec } from "./specs"
 import { GamerStrategy } from "./types"
 import * as Bonuses from "./commonPlayerBonuses"
-import { DoAutoAttack, DoLanceAutoOnDragon } from "./auto"
+import { DoAutoAttack, DoLanceAutoOnDragon, DoScytheAuto } from "./auto"
 
 export const gamer_2spec_minreq_dwh_tent:GamerStrategy = {
     numberOfSpecsAvailable: 2,
@@ -99,7 +99,7 @@ export const gamer_minreq_maxstats_bgs_lb_tent:GamerStrategy = {
     autoAttackBonuses: Bonuses.minreq_maxstats_lb_tent
 }
 
-export const gamer_2specs_medreq_medstats_dwh_lance:GamerStrategy = {
+export const gamer_2spec_medreq_medstats_dwh_lance:GamerStrategy = {
     numberOfSpecsAvailable: 2,
     specialAttack: DoDwhSpec,
     specialAttackBonuses: Bonuses.midlevel_med_gear_dwh,
@@ -123,7 +123,7 @@ export const gamer_medreq_medstats_dwh_lance_lb:GamerStrategy = {
     autoAttackBonuses: Bonuses.midlevel_med_gear_lance_lb
 }
 
-export const gamer_2specs_medreq_medstats_bgs_lance:GamerStrategy = {
+export const gamer_2spec_medreq_medstats_bgs_lance:GamerStrategy = {
     numberOfSpecsAvailable: 2,
     specialAttack: DoBgsSpec,
     specialAttackBonuses: Bonuses.midlevel_med_gear_bgs,
@@ -147,3 +147,50 @@ export const gamer_medreq_medstats_bgs_lance_lb:GamerStrategy = {
     autoAttackBonuses: Bonuses.midlevel_med_gear_lance_lb
 }
 
+export const gamer_2spec_48scy_maxstats_dwh_scy:GamerStrategy = {
+    numberOfSpecsAvailable: 2,
+    specialAttack: DoDwhSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_dwh,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy
+}
+
+export const gamer_1spec_48scy_maxstats_dwh_scy:GamerStrategy = {
+    numberOfSpecsAvailable: 1,
+    specialAttack: DoDwhSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_dwh,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy
+}
+
+export const gamer_2spec_48scy_maxstats_bgs_scy:GamerStrategy = {
+    numberOfSpecsAvailable: 2,
+    specialAttack: DoBgsSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_bgs,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy
+}
+
+export const gamer_1spec_48scy_maxstats_bgs_scy:GamerStrategy = {
+    numberOfSpecsAvailable: 1,
+    specialAttack: DoBgsSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_bgs,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy
+}
+
+export const gamer_48scy_maxstats_dwh_scy_lb:GamerStrategy = {
+    numberOfSpecsAvailable: 2,
+    specialAttack: DoDwhSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_bgs_lb,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy_lb
+}
+
+export const gamer_48scy_maxstats_bgs_scy_lb:GamerStrategy = {
+    numberOfSpecsAvailable: 1,
+    specialAttack: DoBgsSpec,
+    specialAttackBonuses: Bonuses.maxlevel_48scy_bgs_lb,
+    autoAttack: DoScytheAuto,
+    autoAttackBonuses: Bonuses.maxlevel_48scy_scy_lb
+}
