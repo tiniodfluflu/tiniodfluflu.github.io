@@ -5,6 +5,7 @@ import * as Bonuses from "./commonPlayerBonuses";
 import { DoDwhSpec, DoBgsSpec } from "./specs";
 import { GamerStrategy } from "./types";
 import * as Gamers from "./gamers"
+import * as ChartUtil from "./chartUtil";
 
 let stratLog: Array<number> = [];
 
@@ -90,10 +91,11 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
  * @returns array of ticks taken for each fight, of length maxIter
  */
 function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
+    let stratLog:Array<number> = [];
     let battleLog: BattleLog = new BattleLog(true);
+    let tickCounter:number;
     for (let iter = 0; iter < maxIter; iter++) {
-        let tickCounter = 0;
-
+        tickCounter = 0;
         let gamer1NextAttackTick:number = 0;
         let gamer2NextAttackTick:number = 0;
         let gamer3NextAttackTick:number = 0;
@@ -144,11 +146,37 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
             tickCounter += 1;
         }
 
-        stratLog.push(tickCounter);
+        if(battleLog.enabled){
+            console.log("strat");
+            console.log(battleLog);
+        }
+        stratLog.push(tickCounter)
     }
     return stratLog;
 }
 
 export function DoTrioOlm_4dwh_minreq_tent(maxIter:number):Array<number> {
     return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_2spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent, Gamers.gamer_1spec_minreq_dwh_tent);
+}
+
+export function DoTrioOlm_6dwh_minreq_tent_lb(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_minreq_dwh_lb_tent, Gamers.gamer_minreq_dwh_lb_tent, Gamers.gamer_minreq_dwh_lb_tent);
+}
+
+export function DoTrioOlm_4bgs_minreq_tent(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_2spec_minreq_bgs_tent, Gamers.gamer_1spec_minreq_bgs_tent, Gamers.gamer_1spec_minreq_bgs_tent);
+}
+
+export function DoTrioOlm_6bgs_minreq_tent_lb(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, Gamers.gamer_minreq_bgs_lb_tent, Gamers.gamer_minreq_bgs_lb_tent, Gamers.gamer_minreq_bgs_lb_tent);
+}
+
+
+// TODO: refactor the chart utils out
+export function histogram(battleSets:Array<number>):object {
+    return ChartUtil.histogram(battleSets);
+}
+
+export function averageTicks(battleSets:Array<number>):number {
+    return ChartUtil.averageTicks(battleSets);
 }

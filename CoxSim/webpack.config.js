@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
    devtool: 'inline-source-map',
-   entry: ["./src/mainloop_notickloss.ts", "./src/chartUtil.ts"],
+   entry: "./src/mainloop_notickloss.ts",
    output: {
        filename: "bundle.js",
        path: path.resolve(__dirname, 'dist'),
