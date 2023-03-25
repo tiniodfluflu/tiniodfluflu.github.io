@@ -12,7 +12,7 @@ let stratLog: Array<number> = [];
 const MAX_TICKCOUNT:number = 1000;
 
 export function GetTrioOlmTicks(maxIter: number): Array<number> {
-    let battleLog: BattleLog = new BattleLog(true);
+    let battleLog: BattleLog = new BattleLog(false);
     for (let iter = 0; iter < maxIter; iter++) {
         let tickCounter = 0;
 
@@ -92,7 +92,7 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
  */
 function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
     let stratLog:Array<number> = [];
-    let battleLog: BattleLog = new BattleLog(true);
+    let battleLog: BattleLog = new BattleLog(false);
     let tickCounter:number;
     for (let iter = 0; iter < maxIter; iter++) {
         tickCounter = 0;
@@ -146,7 +146,7 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
             tickCounter += 1;
         }
 
-        if(battleLog.enabled){
+        if(battleLog.enabled) {
             console.log("strat");
             console.log(battleLog);
         }
