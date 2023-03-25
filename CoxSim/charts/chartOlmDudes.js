@@ -1,9 +1,10 @@
 var xValues = ["DWH BRing", "DWH LB", "BGS BRing", "BGS LB"];
+var maxIter = 1;
 
-var strat1 = olmHitter.DoTrioOlm_4dwh_minreq_tent(100);
-var strat2 = olmHitter.DoTrioOlm_6dwh_minreq_tent_lb(100);
-var strat3 = olmHitter.DoTrioOlm_4bgs_minreq_tent(100);
-var strat4 = olmHitter.DoTrioOlm_6bgs_minreq_tent_lb(100);
+var strat1 = olmHitter.DoTrioOlm_4dwh_minreq_tent(maxIter);
+var strat2 = olmHitter.DoTrioOlm_6dwh_minreq_tent_lb(maxIter);
+var strat3 = olmHitter.DoTrioOlm_4bgs_minreq_tent(maxIter);
+var strat4 = olmHitter.DoTrioOlm_6bgs_minreq_tent_lb(maxIter);
 
 console.log(strat1, strat2, strat3, strat4);
 
@@ -17,7 +18,7 @@ var yValues = [
 var chartData = {
   labels: xValues,
   datasets: [{
-    label: '75 Attack 75 Strength Min Req',
+    label: `75 Attack 75 Strength Min Req ${maxIter} iterations`,
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(255, 159, 64, 0.2)',
