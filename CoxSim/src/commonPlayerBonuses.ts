@@ -157,6 +157,84 @@ export const minreq_maxstats_lb_dwh:PlayerBonuses = {
     attackCooldown: 6,
 };
 
+export const midlevel_med_gear_lance:PlayerBonuses = {
+    name: "85/85 med gear lance",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 142,
+    totalSlashBonus: 0,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 125,
+    attackStyle:AttackStyle.STAB,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 4,
+};
+
+export const midlevel_med_gear_lance_lb:PlayerBonuses = {
+    name: "85/85 med gear lance lb",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 142,
+    totalSlashBonus: 0,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 117,
+    attackStyle:AttackStyle.STAB,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 4,
+};
+
+export const midlevel_med_gear_dwh:PlayerBonuses = {
+    name: "85/85 med gear dwh",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 0,
+    totalSlashBonus: 0,
+    totalCrushBonus: 150,
+    totalStrengthBonus: 140,
+    attackStyle:AttackStyle.CRUSH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+};
+
+export const midlevel_med_gear_dwh_lb:PlayerBonuses = {
+    name: "85/85 med gear dwh lb",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 0,
+    totalSlashBonus: 0,
+    totalCrushBonus: 150,
+    totalStrengthBonus: 132,
+    attackStyle:AttackStyle.CRUSH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+};
+
+export const midlevel_med_gear_bgs:PlayerBonuses = {
+    name: "85/85 med gear bgs",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 0,
+    totalSlashBonus: 164,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 181,
+    attackStyle:AttackStyle.SLASH,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+};
+
+export const midlevel_med_gear_bgs_lb:PlayerBonuses = {
+    name: "85/85 med gear bgs lb",
+    effectiveAttackLevel: 124,
+    effectiveStrengthLevel: 127,
+    totalStabBonus: 0,
+    totalSlashBonus: 164,
+    totalCrushBonus: 0,
+    totalStrengthBonus: 173,
+    attackStyle:AttackStyle.STAB,
+    GetPlayerAttackBonus: GetPlayerAttackBonus,
+    attackCooldown: 6,
+};
+
 function GetPlayerAttackBonus(style:AttackStyle):AttackStyle {
     
     if(style === AttackStyle.STAB) {

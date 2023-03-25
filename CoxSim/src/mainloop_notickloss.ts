@@ -92,9 +92,10 @@ export function GetTrioOlmTicks(maxIter: number): Array<number> {
  */
 function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:GamerStrategy, gamer3: GamerStrategy):Array<number> {
     let stratLog:Array<number> = [];
-    let battleLog: BattleLog = new BattleLog(false);
+    let battleLog: BattleLog = new BattleLog(true);
     let tickCounter:number;
     for (let iter = 0; iter < maxIter; iter++) {
+        battleLog.clearLog();
         tickCounter = 0;
         let gamer1NextAttackTick:number = 0;
         let gamer2NextAttackTick:number = 0;
@@ -126,7 +127,7 @@ function DoTrioOlmWithSpecStrategy(maxIter:number, gamer1:GamerStrategy, gamer2:
                     gamer2.specialAttack(battleLog, gamer2.specialAttackBonuses, theOlm, tickCounter);
                     gamer2NextAttackTick += gamer2.specialAttackBonuses.attackCooldown;
                 } else {
-                    gamer2.specialAttack(battleLog, gamer2.autoAttackBonuses, theOlm, tickCounter);
+                    gamer2.autoAttack(battleLog, gamer2.autoAttackBonuses, theOlm, tickCounter);
                     gamer2NextAttackTick += gamer2.autoAttackBonuses.attackCooldown;
                 }
             }
@@ -205,6 +206,34 @@ export function DoTrioOlm_6bgs_minreq_max_stats_tent_lb(maxIter:number):Array<nu
         Gamers.gamer_minreq_maxstats_bgs_lb_tent, 
         Gamers.gamer_minreq_maxstats_bgs_lb_tent, 
         Gamers.gamer_minreq_maxstats_bgs_lb_tent);
+}
+
+export function DoTrioOlm_4dwh_medgear_medstats_lance(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2specs_medreq_medstats_dwh_lance, 
+        Gamers.gamer_1spec_medreq_medstats_dwh_lance, 
+        Gamers.gamer_1spec_medreq_medstats_dwh_lance);
+}
+
+export function DoTrioOlm_6dwh_medgear_medstats_lance(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_medreq_medstats_dwh_lance_lb, 
+        Gamers.gamer_medreq_medstats_dwh_lance_lb, 
+        Gamers.gamer_medreq_medstats_dwh_lance_lb);
+}
+
+export function DoTrioOlm_4bgs_medgear_medstats_lance(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_2specs_medreq_medstats_bgs_lance, 
+        Gamers.gamer_1spec_medreq_medstats_bgs_lance, 
+        Gamers.gamer_1spec_medreq_medstats_bgs_lance);
+}
+
+export function DoTrioOlm_6bgs_medgear_medstats_lance(maxIter:number):Array<number> {
+    return DoTrioOlmWithSpecStrategy(maxIter, 
+        Gamers.gamer_medreq_medstats_bgs_lance_lb, 
+        Gamers.gamer_medreq_medstats_bgs_lance_lb, 
+        Gamers.gamer_medreq_medstats_bgs_lance_lb);
 }
 
 // TODO: refactor the chart utils out

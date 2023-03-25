@@ -20,7 +20,7 @@ export function CalculateNpcDefRoll(defLevel: number, styleBonus: number): numbe
 }
 
 export function CalculatePlayerAttackRoll(effectiveAttackLevel: number, styleBonus: number): number {
-    return effectiveAttackLevel * (styleBonus + 64);
+    return (effectiveAttackLevel + 8) * (styleBonus + 64);
 }
 
 export function CalculateHammerMaxSpecHit(effectiveStrengthLevel: number, gearStrBonus: number): number {
@@ -32,7 +32,11 @@ export function CalculateBgsMaxHit(effectiveStrengthLevel: number, gearStrBonus:
 }
 
 export function CalculateMaxHit(effectiveStrengthLevel: number, gearStrBonus: number): number {
-    return Math.floor((effectiveStrengthLevel * (gearStrBonus + 64) + 320) / 640);
+    return Math.floor(((effectiveStrengthLevel + 9) * (gearStrBonus + 64) + 320) / 640);
+}
+
+export function CalculateLanceMaxHitOnDragon(effectiveStrengthLevel: number, gearStrBonus: number): number {
+    return Math.floor(1.2 * CalculateMaxHit(effectiveStrengthLevel, gearStrBonus));
 }
 
 export enum AttackStyle {
